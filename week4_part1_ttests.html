@@ -378,7 +378,58 @@ summary {
 </div>
 
 
+<div id="confidence-intervals" class="section level2">
+<h2>1. Confidence intervals</h2>
+<pre class="r"><code>otter_length &lt;- c(38, 41, 50, 27, 48, 35, 62, 41, 33)
 
+t.test(otter_length)</code></pre>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  otter_length
+## t = 11.973, df = 8, p-value = 2.181e-06
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  33.64154 49.69180
+## sample estimates:
+## mean of x 
+##  41.66667</code></pre>
+</div>
+<div id="t-tests1-sample-t-test" class="section level2">
+<h2>2. T-tests(1-sample t-test)</h2>
+<p>See a claim: mean otter length is 50 inches</p>
+<pre class="r"><code>otter_test &lt;- t.test(x = otter_length, mu = 50)
+otter_test</code></pre>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  otter_length
+## t = -2.3946, df = 8, p-value = 0.04354
+## alternative hypothesis: true mean is not equal to 50
+## 95 percent confidence interval:
+##  33.64154 49.69180
+## sample estimates:
+## mean of x 
+##  41.66667</code></pre>
+</div>
+<div id="two-sample-t-test" class="section level2">
+<h2>3. Two-sample t-test</h2>
+<pre class="r"><code>desert_bighorns &lt;- c(32, 24, 18, 26, 28, 49, 50, 20)
+sierra_bighorns &lt;- c(40, 53, 23, 19, 26, 29, 36)
+
+t.test(x = desert_bighorns, y = sierra_bighorns)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  desert_bighorns and sierra_bighorns
+## t = -0.22788, df = 12.895, p-value = 0.8233
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -14.79580  11.97437
+## sample estimates:
+## mean of x mean of y 
+##  30.87500  32.28571</code></pre>
+</div>
 
 
 
